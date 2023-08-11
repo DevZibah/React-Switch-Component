@@ -1,38 +1,17 @@
-import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import Home from './components/Home'
 import '../src/style/Global.css'
-import { createBrowserRouter } from 'react-router-dom'
-import { RouterProvider } from 'react-router'
-import AllTasks from './routes/AllTasks'
-import TasksLayouts from './Layouts/TasksLayouts'
-import ActiveTasks from './routes/ActiveTasks'
-import CompletedTasks from './routes/CompletedTasks'
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <TasksLayouts />,
-    children: [
-      {
-        path: '/',
-        element: <AllTasks />,
-      },
-      {
-        path: '/ActiveTasks',
-        element: <ActiveTasks />,
-      },
-      {
-        path: '/CompletedTasks',
-        element: <CompletedTasks />,
-      },
-    ],
-  },
-])
-
-export const App = () => {
+const App = () => {
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <div className='App'>
+      <div>
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </div>
+    </div>
   )
 }
+
+export default App

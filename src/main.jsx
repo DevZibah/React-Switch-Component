@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { App } from './App'
-import { TaskContextProvider } from './contexts/TaskContext'
+import App from './App'
+import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <TaskContextProvider>
-    <React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter>
       <App />
-    </React.StrictMode>
-  </TaskContextProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 )
